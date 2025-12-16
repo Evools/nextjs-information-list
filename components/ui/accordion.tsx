@@ -8,11 +8,14 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react"
 
 interface AccordionProps extends React.ComponentProps<typeof AccordionPrimitive.Root> {
   compact?: boolean;
+  children?: React.ReactNode;
+  className?: string;
 }
 
 function Accordion({
   className,
   compact = false,
+  children,
   ...props
 }: AccordionProps) {
   return (
@@ -25,7 +28,9 @@ function Accordion({
           className
         )}
         {...props}
-      />
+      >
+        {children}
+      </AccordionPrimitive.Root>
     </div>
   )
 }

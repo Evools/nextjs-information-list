@@ -7,15 +7,19 @@ import { cn } from "@/lib/utils"
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react"
 
 interface AccordionProps extends React.ComponentProps<typeof AccordionPrimitive.Root> {
-  compact?: boolean;
-  children?: React.ReactNode;
-  className?: string;
+  compact?: boolean
+  children?: React.ReactNode
+  className?: string
+  type?: "single" | "multiple"
+  collapsible?: boolean
 }
 
 function Accordion({
   className,
   compact = false,
   children,
+  type = "single",
+  collapsible,
   ...props
 }: AccordionProps) {
   return (
@@ -27,6 +31,8 @@ function Accordion({
           "overflow-hidden rounded-2xl border w-full",
           className
         )}
+        type={type}
+        collapsible={collapsible}
         {...props}
       >
         {children}

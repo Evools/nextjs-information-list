@@ -1,20 +1,30 @@
 "use client";
 
-import { Accordion as AccordionPrimitive } from "radix-ui";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 
+type AccordionBaseProps = { className?: string };
 type AccordionProps =
-  | (AccordionPrimitive.AccordionSingleProps & { className?: string })
-  | (AccordionPrimitive.AccordionMultipleProps & { className?: string });
+  | (AccordionPrimitive.AccordionSingleProps & AccordionBaseProps)
+  | (AccordionPrimitive.AccordionMultipleProps & AccordionBaseProps);
 
-function Accordion({ className, ...props }: AccordionProps) {
-  const rootProps =
-    props.type === "multiple"
-      ? { ...props, type: "multiple" as const }
-      : { ...props, type: "single" as const };
+function Accordion(props: AccordionProps) {
+  const { className, ...rest } = props;
+  const isMultiple = rest.type === "multiple";
+
+  const normalizedProps = isMultiple
+    ? ({
+        ...rest,
+        type: "multiple",
+        // collapsible is only valid for single mode; ensure it's not present
+      } satisfies AccordionPrimitive.AccordionMultipleProps)
+    : ({
+        ...rest,
+        type: "single",
+      } satisfies AccordionPrimitive.AccordionSingleProps);
 
   return (
     <AccordionPrimitive.Root
@@ -23,7 +33,7 @@ function Accordion({ className, ...props }: AccordionProps) {
         "overflow-hidden rounded-2xl border flex w-full flex-col",
         className
       )}
-      {...rootProps}
+      {...normalizedProps}
     />
   );
 }

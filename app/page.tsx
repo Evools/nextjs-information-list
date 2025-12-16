@@ -9,6 +9,20 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import {
+  BookOpenCheck,
+  ClipboardList,
+  Clock3,
+  Coins,
+  Cpu,
+  GraduationCap,
+  LayoutDashboard,
+  ShieldCheck,
+  ShoppingBag,
+  Trophy,
+  User,
+  Users,
+} from "lucide-react";
 
 const sections = {
   overview: {
@@ -72,7 +86,10 @@ export default function ProjectDocsPage() {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="areas">
                   <AccordionTrigger>
-                    Основные разделы приложения
+                    <span className="flex items-center gap-2 ">
+                      <LayoutDashboard className="h-4 w-4" />
+                      Основные разделы приложения
+                    </span>
                   </AccordionTrigger>
                   <AccordionContent>
                     <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
@@ -102,7 +119,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="tech">
-                  <AccordionTrigger>Технологический фокус</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <Cpu className="h-4 w-4" />
+                      Технологический фокус
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-sm text-muted-foreground">
                       Проект построен как современное React/Next.js приложение с
@@ -123,7 +145,12 @@ export default function ProjectDocsPage() {
             <CardContent>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="admin">
-                  <AccordionTrigger>Администратор</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <ShieldCheck className="h-4 w-4" />
+                      Администратор
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       {compactMode
@@ -144,7 +171,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="teacher">
-                  <AccordionTrigger>Преподаватель</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <GraduationCap className="h-4 w-4" />
+                      Преподаватель
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       {compactMode
@@ -165,7 +197,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="student">
-                  <AccordionTrigger>Студент</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <User className="h-4 w-4" />
+                      Студент
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       {compactMode
@@ -191,7 +228,12 @@ export default function ProjectDocsPage() {
             <CardContent className="space-y-4">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="courses">
-                  <AccordionTrigger>Курсы, главы и материалы</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <BookOpenCheck className="h-4 w-4" />
+                      Курсы, главы и материалы
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-sm text-muted-foreground">
                       Курсы структурируются на главы и материалы, что позволяет
@@ -203,7 +245,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="assignments">
-                  <AccordionTrigger>Задания и оценки</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <ClipboardList className="h-4 w-4" />
+                      Задания и оценки
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       Преподаватель создаёт разные типы заданий (обычные,
@@ -220,7 +267,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="attendance">
-                  <AccordionTrigger>Посещаемость и дежурства</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <Clock3 className="h-4 w-4" />
+                      Посещаемость и дежурства
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       Система поддерживает гибкую работу с посещаемостью и
@@ -237,7 +289,10 @@ export default function ProjectDocsPage() {
 
                 <AccordionItem value="groups">
                   <AccordionTrigger>
-                    Группы и управление студентами
+                    <span className="flex items-center gap-2 ">
+                      <Users className="h-4 w-4" />
+                      Группы и управление студентами
+                    </span>
                   </AccordionTrigger>
                   <AccordionContent>
                     <p className="text-sm text-muted-foreground">
@@ -265,7 +320,10 @@ export default function ProjectDocsPage() {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="coins">
                   <AccordionTrigger>
-                    Коины и внутренняя экономика
+                    <span className="flex items-center gap-2 ">
+                      <Coins className="h-4 w-4" />
+                      Коины и внутренняя экономика
+                    </span>
                   </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
@@ -286,7 +344,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="rating">
-                  <AccordionTrigger>Рейтинги и достижения</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <Trophy className="h-4 w-4" />
+                      Рейтинги и достижения
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       Рейтинг отражает общий прогресс студента, а достижения
@@ -302,7 +365,12 @@ export default function ProjectDocsPage() {
                 </AccordionItem>
 
                 <AccordionItem value="shop">
-                  <AccordionTrigger>Магазин наград</AccordionTrigger>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-2 ">
+                      <ShoppingBag className="h-4 w-4" />
+                      Магазин наград
+                    </span>
+                  </AccordionTrigger>
                   <AccordionContent>
                     <p className="mb-2 text-sm text-muted-foreground">
                       Магазин позволяет превращать виртуальные достижения в
@@ -313,80 +381,6 @@ export default function ProjectDocsPage() {
                       <li>Гибкая настройка ассортимента администратором.</li>
                       <li>Мотивация возвращаться в систему и быть активным.</li>
                     </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Тексты для слайдов</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-sm text-muted-foreground">
-                Ниже — готовые блоки текста, которые можно копировать в
-                презентацию. В компактном режиме они короче, в обычном — более
-                развёрнутые.
-              </p>
-
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="slide-overview">
-                  <AccordionTrigger>Слайд 1 — Общий обзор</AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-sm text-muted-foreground">
-                      {compactMode
-                        ? "Платформа LMS для школ и курсов с ролями админ / преподаватель / студент, объединяющая управление курсами, группами, заданиями и геймификацией."
-                        : "Этот проект — современная веб‑платформа LMS для школ и образовательных центров. Система объединяет управление курсами, группами, заданиями и посещаемостью, а также включает геймификацию с уникальными баллами и внутренней валютой. Платформа поддерживает несколько ролей (администратор, преподаватель, студент) и даёт каждому удобный интерфейс под его задачи."}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="slide-roles">
-                  <AccordionTrigger>Слайд 2 — Роли и сценарии</AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-sm text-muted-foreground">
-                      {compactMode
-                        ? "Администратор управляет пользователями, группами, курсами и магазином. Преподаватель ведёт группы, выдаёт задания, проверяет работы и отмечает посещаемость. Студент видит курсы, задания, оценки, рейтинг и баланс коинов."
-                        : "Администратор управляет пользователями, создаёт и редактирует курсы, настраивает группы, роли и экономику коинов. Преподаватель работает с учебными группами: выдаёт задания, проверяет работы, выставляет оценки, управляет посещаемостью и дежурствами. Студент получает личный кабинет, где видит свои курсы, задания, оценки, расписание, рейтинг и баланс внутренней валюты."}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="slide-features">
-                  <AccordionTrigger>
-                    Слайд 3 — Учебный функционал
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-sm text-muted-foreground">
-                      {compactMode
-                        ? "Курсы делятся на главы и материалы, поддерживаются разные типы заданий, оценивание и учёт посещаемости. Есть работа с группами, профилями пользователей и календарём."
-                        : "В системе реализовано полноценное управление учебным контентом: курсы структурируются на главы и материалы, к ним привязываются задания и тесты. Преподаватель может выдавать и обновлять задания, принимать решения студентов, выставлять и пересчитывать оценки. Отдельно реализованы учёт посещаемости и дежурств, работа с группами и профилями пользователей, а также календарь с расписанием и дедлайнами."}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="slide-gamification">
-                  <AccordionTrigger>Слайд 4 — Геймификация</AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-sm text-muted-foreground">
-                      {compactMode
-                        ? "Коины, рейтинги, достижения и магазин наград превращают обучение в игру с целями и наградами, повышая мотивацию студентов."
-                        : "Геймификация строится вокруг системы коинов, рейтингов и достижений. Студенты получают коины за выполнение заданий, хорошие оценки, посещаемость и участие в жизни группы. На основе активности формируется личный и групповой рейтинг, а также открываются достижения. Заработанные коины можно тратить во встроенном магазине наград на бонусы и привилегии, что делает учебный процесс ближе к игре и повышает вовлечённость."}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="slide-ui">
-                  <AccordionTrigger>
-                    Слайд 5 — Интерфейс и опыт
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-sm text-muted-foreground">
-                      {compactMode
-                        ? "Современный адаптивный интерфейс с отдельными дашбордами для ролей, системой уведомлений и настраиваемым профилем пользователя."
-                        : "Интерфейс проекта — это современное адаптивное веб‑приложение с отдельными дашбордами под каждую роль. Встроенные уведомления и календарь помогают не пропускать занятия и дедлайны. Пользователь может настроить профиль, аватар и внешний вид интерфейса. Такой подход делает систему удобной и понятной как для преподавателей, так и для студентов, а также готовой к демонстрации на презентациях и скриншотах."}
-                    </p>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

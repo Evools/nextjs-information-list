@@ -1,22 +1,31 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Accordion as AccordionPrimitive } from "radix-ui"
+import { Accordion as AccordionPrimitive } from "radix-ui";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { IconChevronDown, IconChevronUp } from "@tabler/icons-react"
+import { cn } from "@/lib/utils";
+import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 
-function Accordion({
-  className,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Root>) {
+type AccordionProps =
+  | (AccordionPrimitive.AccordionSingleProps & { className?: string })
+  | (AccordionPrimitive.AccordionMultipleProps & { className?: string });
+
+function Accordion({ className, ...props }: AccordionProps) {
+  const rootProps =
+    props.type === "multiple"
+      ? { ...props, type: "multiple" as const }
+      : { ...props, type: "single" as const };
+
   return (
     <AccordionPrimitive.Root
       data-slot="accordion"
-      className={cn("overflow-hidden rounded-2xl border flex w-full flex-col", className)}
-      {...props}
+      className={cn(
+        "overflow-hidden rounded-2xl border flex w-full flex-col",
+        className
+      )}
+      {...rootProps}
     />
-  )
+  );
 }
 
 function AccordionItem({
@@ -29,7 +38,7 @@ function AccordionItem({
       className={cn("data-open:bg-muted/50 not-last:border-b", className)}
       {...props}
     />
-  )
+  );
 }
 
 function AccordionTrigger({
@@ -48,11 +57,17 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <IconChevronDown data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" />
-        <IconChevronUp data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" />
+        <IconChevronDown
+          data-slot="accordion-trigger-icon"
+          className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
+        />
+        <IconChevronUp
+          data-slot="accordion-trigger-icon"
+          className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline"
+        />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
-  )
+  );
 }
 
 function AccordionContent({
@@ -75,7 +90,7 @@ function AccordionContent({
         {children}
       </div>
     </AccordionPrimitive.Content>
-  )
+  );
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };

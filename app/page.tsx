@@ -189,7 +189,7 @@ export default function ProjectDocsPage() {
               <CardTitle>{sections.features.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Accordion type="multiple" className="w-full">
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="courses">
                   <AccordionTrigger>Курсы, главы и материалы</AccordionTrigger>
                   <AccordionContent>
@@ -262,7 +262,7 @@ export default function ProjectDocsPage() {
                 ощущением прогресса.
               </p>
 
-              <Accordion type="multiple" className="w-full">
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="coins">
                   <AccordionTrigger>
                     Коины и внутренняя экономика
@@ -330,7 +330,7 @@ export default function ProjectDocsPage() {
                 развёрнутые.
               </p>
 
-              <Accordion type="multiple" className="w-full">
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="slide-overview">
                   <AccordionTrigger>Слайд 1 — Общий обзор</AccordionTrigger>
                   <AccordionContent>

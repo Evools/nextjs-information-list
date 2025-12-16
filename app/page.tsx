@@ -62,11 +62,6 @@ export default function ProjectDocsPage() {
             <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
               Документация по LMS‑платформе
             </h1>
-            <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
-              Страница — удобный конструктор: быстро копируйте текст для
-              слайдов, презентаций и описаний проекта. Используйте аккордионы,
-              чтобы просматривать нужные блоки.
-            </p>
           </div>
         </header>
 
